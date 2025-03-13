@@ -8,23 +8,35 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #0d0d0d;
       font-family: 'Cairo', sans-serif;
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      height: 100vh;
+      height: 100%;
       transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* الوضع الليلي */
+    .dark-mode {
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+
+    /* الوضع النهاري */
+    .light-mode {
+      background-color: #f5f5f5;
+      color: #000;
     }
 
     h1 {
       margin-top: 20px;
-      font-size: 32px; /* تم تصغير حجم الخط هنا */
+      font-size: 32px;
       color: #ffcc00;
       text-shadow: 0 4px 15px rgba(255, 204, 0, 0.6);
       white-space: nowrap;
+      text-align: center;
     }
 
     .buttons-container {
@@ -33,6 +45,7 @@
       max-width: 600px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 20px;
     }
 
@@ -48,6 +61,8 @@
       text-decoration: none;
       transition: 0.3s ease;
       box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
     }
 
     .lecture-button:hover {
@@ -72,10 +87,12 @@
       position: fixed;
       top: 20px;
       left: 20px;
+      z-index: 1000;
+      margin-left: 20px;
     }
   </style>
 </head>
-<body>
+<body class="dark-mode">
 
   <span class="sun-icon" id="sunIcon" onclick="toggleTheme()">☀</span>
   
@@ -102,13 +119,13 @@
       const sunIcon = document.getElementById("sunIcon");
 
       // Toggle dark and light mode
-      if (body.style.backgroundColor === "rgb(13, 13, 13)") {
-        body.style.backgroundColor = "#f5f5f5"; // Light mode background
-        body.style.color = "#000"; // Dark text
+      if (body.classList.contains("dark-mode")) {
+        body.classList.remove("dark-mode");
+        body.classList.add("light-mode");
         sunIcon.textContent = "🌙"; // Change icon to moon
       } else {
-        body.style.backgroundColor = "#0d0d0d"; // Dark mode background
-        body.style.color = "#fff"; // Light text
+        body.classList.remove("light-mode");
+        body.classList.add("dark-mode");
         sunIcon.textContent = "☀"; // Change icon to sun
       }
     }
