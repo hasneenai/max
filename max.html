@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة ماكس التعليمية</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      font-family: 'Cairo', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 32px; /* تم تصغير حجم الخط هنا */
+      color: #ffcc00;
+      text-shadow: 0 4px 15px rgba(255, 204, 0, 0.6);
+      white-space: nowrap;
+    }
+
+    .buttons-container {
+      margin-top: 40px;
+      width: 90%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .lecture-button {
+      background-color: #2c2c2c;
+      border: 2px solid #ffcc00;
+      color: #fff;
+      padding: 18px 0;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 12px;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);
+    }
+
+    .lecture-button:hover {
+      background-color: #444;
+      transform: scale(1.03);
+      box-shadow: 0 6px 15px rgba(255, 204, 0, 0.4);
+    }
+
+    .footer {
+      margin-top: 80px;
+      padding: 20px;
+      color: #999;
+      font-size: 15px;
+      border-top: 1px solid #333;
+      width: 100%;
+      text-align: center;
+    }
+
+    .sun-icon {
+      font-size: 30px;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <span class="sun-icon" id="sunIcon" onclick="toggleTheme()">☀</span>
+  
+  <h1>منصة ماكس التعليمية</h1>
+
+  <div class="buttons-container">
+    <a href="Islamic" class="lecture-button" target="_blank">التربية الإسلامية</a>
+    <a href="https://www.youtube.com/" class="lecture-button" target="_blank">اللغة العربية</a>
+    <a href="https://www.youtube.com/" class="lecture-button" target="_blank">اللغة الإنجليزية</a>
+    <a href="https://www.youtube.com/" class="lecture-button" target="_blank">الأحياء</a>
+    <a href="https://www.youtube.com/" class="lecture-button" target="_blank">الرياضيات</a>
+    <a href="https://www.youtube.com/" class="lecture-button" target="_blank">الكيمياء</a>
+    <a href="https://www.youtube.com/" class="lecture-button" target="_blank">الفيزياء</a>
+    <a href="https://www.youtube.com/" class="lecture-button" target="_blank">قناة الملازم</a>
+  </div>
+
+  <div class="footer">
+    جميع الحقوق محفوظة لدى ماكس ©
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const sunIcon = document.getElementById("sunIcon");
+
+      // Toggle dark and light mode
+      if (body.style.backgroundColor === "rgb(13, 13, 13)") {
+        body.style.backgroundColor = "#f5f5f5"; // Light mode background
+        body.style.color = "#000"; // Dark text
+        sunIcon.textContent = "🌙"; // Change icon to moon
+      } else {
+        body.style.backgroundColor = "#0d0d0d"; // Dark mode background
+        body.style.color = "#fff"; // Light text
+        sunIcon.textContent = "☀"; // Change icon to sun
+      }
+    }
+  </script>
+
+</body>
+</html>
