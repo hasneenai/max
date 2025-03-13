@@ -1,1 +1,187 @@
 
+
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>الصفحة الرئيسية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .toggle-icon {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .teacher-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 80px;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .teacher-card {
+            background: #333;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 3px solid #FF8C00;
+            overflow: hidden;
+        }
+
+        .teacher-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .teacher-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            margin-right: 15px;
+        }
+
+        .teacher-info {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+
+        .teacher-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .course-title {
+            font-size: 1.1rem;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #ccc;
+            text-align: center;
+            padding: 15px;
+            background-color: transparent;
+        }
+
+        footer p {
+            color: white;
+        }
+
+        .support {
+            display: block;
+            margin-top: 20px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        body.day-mode {
+            background-color: #f0f0f0;
+            color: black;
+        }
+
+        body.day-mode .teacher-card {
+            background: #f5f5f5;
+        }
+
+        body.day-mode .teacher-name,
+        body.day-mode .course-title {
+            color: black;
+        }
+
+        body.day-mode footer p {
+            color: black;
+        }
+
+        body.day-mode .navbar {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toggle-icon" onclick="toggleMode()">☀</div>
+    <div class="navbar">مدرسين التربية الاسلامية</div>
+
+    <div class="teacher-cards">
+        <div class="teacher-card" onclick="window.location.href='Mhmed'">
+            <div class="teacher-info">
+                <p class="teacher-name">محمد الجنائي</p>
+                <p class="course-title">دورة التربية الإسلامية 2025</p>
+            </div>
+            <img src="https://api.telegram.org/file/bot7899086026:AAHJVo6bcO0L-W8xwEZ74zlU7yyvP4U92q4/photos/file_15.jpg" class="teacher-img" alt="محمد الجنائي">
+        </div>
+
+        <div class="teacher-card" onclick="window.location.href='sajed.html'">
+            <div class="teacher-info">
+                <p class="teacher-name">ساجد العكيلي</p>
+                <p class="course-title">دورة التربية الإسلامية 2025</p>
+            </div>
+            <img src="https://api.telegram.org/file/bot7899086026:AAHJVo6bcO0L-W8xwEZ74zlU7yyvP4U92q4/photos/file_15.jpg" class="teacher-img" alt="ساجد العكيلي">
+        </div>
+    </div>
+
+    <footer>
+        <p>© جميع الحقوق لدى منصة ماكس التعليمية</p>
+        <a href="https://t.me/uumm20" class="support">قناتي التليكرام</a>
+    </footer>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('day-mode');
+            const icon = document.querySelector('.toggle-icon');
+            icon.innerHTML = document.body.classList.contains('day-mode') ? '🌙' : '☀';
+        }
+    </script>
+</body>
+
+</html>
