@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>محاضرات حسن عبد الكاظم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+<style>
+    body {
+        font-family: "Cairo", Arial, sans-serif;
+        direction: rtl;
+        margin: 10;
+        padding: 12;
+        background: linear-gradient(to right, #1e1e2f, #2c2c3c);
+        color: #333;
+        text-align: center;
+    }
+
+    h1 {
+        color: #fff;
+        margin-top: 20px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        font-size: 2.5rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .chapter-title {
+        background-color: #aaa;
+        border: 2px solid #ffd700;
+        color: white;
+        padding: 12px 40px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 20px 0px 40px 40px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        margin: 10px 15px;
+        width: 200px; /* عرض ثابت */
+        text-align: center; /* توسيط النص داخل الزر */
+    }
+
+
+.lecture-button {
+        background-color: #aaa;
+        border: 2px solid #ffd700;
+        color: #000;
+        padding: 10px 10px;
+        font-size: 25px;
+        font-weight: bold;
+        border-radius: 20px 20px 40px 40px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        margin: 10px 8px;
+        width: 150px; /* عرض ثابت */
+        text-align: center; /* توسيط النص داخل الزر */
+    }
+
+    .lecture-list {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+        background: transparent;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .lecture {
+        background-color: #aaa;
+        border: 2px solid #ffd700;
+        color: #000;
+        padding: 10px 18px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        margin: 10px 8px;
+        width: 200px; /* عرض ثابت */
+        text-align: center; /* توسيط النص داخل الزر */
+    }
+
+    .lecture:hover {
+        background: #d4efff;
+    }
+
+    .video-container {
+        display: none;
+        margin: 20px auto;
+        width: 90%;
+        max-width: 800px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 350px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .close-btn {
+        margin-top: 10px;
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .close-btn:hover {
+        background-color: #c9302c;
+    }
+    
+    footer {
+  margin-top: auto;
+  padding: 15px;
+  color: #ccc;
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+  border-top: 3px solid #555;
+
+  box-sizing: border-box; /* للتأكد من أن التباعد يشمل جميع الحواف */
+}
+
+
+</style>
+
+</head>
+<body>
+  <h1>حسن عبد الكاظم</h1>
+
+  <!-- الفصل الأول -->
+  <div class="chapter">
+    <div class="chapter-title" onclick="toggleLectures('chapter1')">
+      الفصل الاول 📕
+    </div>
+    <div id="chapter1" class="lecture-list">
+     <div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/e147199d-5538-42ac-9d94-fc50a166b032')">محاضرة 1</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/76e65c7d-8592-4947-8223-ab4b74f72ce5')">محاضرة 2</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/bc8cdc20-4f1c-49cb-97a8-7f6941643464')">محاضرة 3</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/a810cc32-2737-4f8d-afd9-3456988a191e')">محاضرة 4</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/ef559fc6-048f-449f-8448-3bf2597d9260')">محاضرة 5</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/25e5e162-a4f5-4c31-95d9-b2809ee61349')">محاضرة 6</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/e4c5f133-508e-45cf-9563-d59587358961')">محاضرة 7</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/3fc9d1c0-e459-4754-a8a2-bad636803c38')">محاضرة 8</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/e5d79730-9760-4246-916c-bc540d25bb72')">محاضرة 9</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/ef550c92-18a8-4665-9af1-1651aae90b2f')">محاضرة 10</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/f772ad1f-cf34-421e-b740-215c4a3b15cb')">محاضرة 11</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/417d2d85-02bc-4e6b-8283-487a64fe6da4')">محاضرة 12</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/f34fdb72-07f2-4177-87e9-83e8287b1004')">محاضرة 13</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/1ae0c8f2-e8e4-45d6-9de7-284de15cecc9')">محاضرة 14</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/f71f9ca0-a77a-4f90-9240-0392d458aed0')">محاضرة 15</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/02b9507d-96e7-470d-890e-c88de1f39cec')">محاضرة 16</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/751793c5-d91f-454c-a523-8933731c77b2')">محاضرة 17</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/3987dcb8-cadc-4ec3-b259-f9eb15030814')">محاضرة 18</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/6b6ce7de-1961-4911-afa8-b03d793ad28a')">محاضرة 19</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/cc80e374-c5b2-4217-a2e5-8b854c34d32a')">محاضرة 20</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/a2a1f615-0d74-45ff-adce-63ded8313113')">محاضرة 21</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/1e9cb597-9f66-4e11-a5ca-7cfbef2ef773')">محاضرة 22</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/17dbbe6a-b56e-498c-a69c-677a1b724469')">محاضرة 23</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/ef4c52a5-52e5-4ec8-a804-a93e1e681176')">محاضرة 24</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/cd569d0b-c2c9-4906-86ed-07a8d96d4364')">محاضرة 25</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/426562ad-5d67-44a4-a0a7-295be56bdc70')">محاضرة 26</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/4ba6bccf-0a34-44ec-8730-5151f432b58c')">محاضرة 27</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/d2959d5e-25d7-42e1-a2cf-6e3573db3f78')">محاضرة 28</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/22177ae5-8b71-4df3-8c85-b20cc43a1189')">محاضرة 29</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/82a96772-c9e6-4ab1-a791-7f0fb3315d26')">محاضرة 30</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/b74ea78b-8997-49c5-8e78-29f137b80776')">محاضرة 31</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/ce580936-bd90-4986-9beb-6a7181d8c28a')">محاضرة 32</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/99f01461-3368-4dfb-acf0-4c4ff35d5d14')">محاضرة 33</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/8d88b4dc-5912-40d5-bbf5-ac061067b93c')">محاضرة 34</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/e5a99cb7-6e67-4d01-8146-8b402e51cd3c')">محاضرة 35</div>
+    </div>
+  </div>
+
+  <!-- الفصل الثاني -->
+  <div class="chapter">
+    <div class="chapter-title" onclick="toggleLectures('chapter2')">
+      الفصل الثاني 📗
+    </div>
+    <div id="chapter2" class="lecture-list">
+      <div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/0d572771-4a67-4ca3-b506-37f8bade7adb')">محاضرة 1</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/10410c62-19d4-4a7c-af25-f00120c4d25f')">محاضرة 2</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/7ec27870-43f8-4132-85c0-303dda83a4fc')">محاضرة 3</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/9f9d68a3-f9ba-4389-a54d-d77f307c4132')">محاضرة 4</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/e1466621-5920-46e7-8b27-6ce4c702a246')">محاضرة 5</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/00b4ccc1-a000-4314-ae8d-6d09814e1bb0')">محاضرة 6</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/ad9497f5-272e-4271-a40c-886a8de94590')">محاضرة 7</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/a1cc0d56-974d-4e2d-909b-61c6eb6a20e3')">محاضرة 8</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/03aaa843-1065-4e59-92b2-791690c0d3ed')">محاضرة 9</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/6a2950b6-ecf8-4adb-9703-a9c5c40ec825')">محاضرة 10</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/1ab5e1ae-af7f-4675-a7ad-b8912b8d41cd')">محاضرة 11</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/74289c89-7ce6-4b7e-b239-db3672edb462')">محاضرة 12</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/20109594-4be8-4c2f-bdcf-0c5c1f92d7d0')">محاضرة 13</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/acc1a843-f219-476f-bf9f-932cef52da14')">محاضرة 14</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/800c3a2e-d576-4394-b385-5cbf1084da33')">محاضرة 15</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/3cf1bcde-cdb9-4173-a4f3-e374e32d8956')">محاضرة 16</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/ac31c5b5-cc94-4425-8e87-afbea7ca1d9a')">محاضرة 17</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/c0d19c59-2179-4066-89a4-5e8ab53c0ac8')">محاضرة 18</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/0f8a06a0-8cd0-4605-95a5-9d1a8c58668e')">محاضرة 19</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/ba7da99a-b3c0-4733-8c0b-cfe93787ee13')">محاضرة 20</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/3c95fc42-c4b2-42fe-844c-c854481d444c')">محاضرة 21</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/6bbe6bc7-c0f6-4fd9-8ba7-33b653fdce54')">محاضرة 22</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/d0f529a6-c060-4ad6-ac44-5df3819e8bf9')">محاضرة 23</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/61aa0106-b88a-4f52-8591-f4b1227b0fdd')">محاضرة 24</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/d6dcf973-f17c-4f09-9be2-30b2fb43e006')">محاضرة 25</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/358d78d1-87aa-438d-bf9a-d0f18aae4386')">محاضرة 26</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/b5978658-2693-4b8f-8246-b48d2feaf9ae')">محاضرة 27</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/ff0d1458-fa6e-4fd1-8510-17ce76bc9276')">محاضرة 28</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/64594326-3780-49d4-931c-f0a9f83f6ea6')">محاضرة 29</div>
+      
+    </div>
+  </div>
+
+  <!-- الفصل الثالث 2025 -->
+  <div class="chapter">
+    <div class="chapter-title" onclick="toggleLectures('chapter3')">
+      الفصل الثالث 2025 📖
+    </div>
+    <div id="chapter3" class="lecture-list">
+      <div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/5d0723f2-eafa-4fe0-95c4-1db1f01e1c6f')">محاضرة 1</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/c69d1163-7735-406b-8b6e-bb0fab08d5f8')">محاضرة 2</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/8ad99075-339b-4ca9-a77a-c0128c770c85')">محاضرة 3</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/7a40f55f-4431-4f51-9acf-0f8767bcedd3')">محاضرة 4</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/9cd59afc-78a7-4c34-b203-b5ebec35b523')">محاضرة 5</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/5ad28956-410c-4ab1-9d04-488d7ee5e692')">محاضرة 6</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/57c756a0-9b0e-438f-9218-0896b58a3a6c')">محاضرة 7</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/0d07b7e9-67bd-4e50-873b-ffbd7c0a6125')">محاضرة 8</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/5823c733-b1d4-4fd3-a1aa-e341ef0ae26c')">محاضرة 9</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/aa63b72b-04ab-48b2-907b-ea7cd51b720a')">محاضرة 10</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/c2b23ef7-8df3-4b73-af6d-281dd3342223')">محاضرة 11</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/5af2ff8b-1ace-436a-a00c-e2a545145034')">محاضرة 12</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/96e68c63-f0ec-44e3-9155-0b55a5f26d88')">محاضرة 13</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/707ee5ef-4342-4468-937b-8829e0fdd7fb')">محاضرة 14</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/1ec908e2-91c2-4e8f-be52-a8d87dce9adb')">محاضرة 15</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/47a65325-b3eb-4094-99d4-d8c00147cd60')">محاضرة 16</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/164b5fc3-e4ba-4866-9695-7469ca7382ee')">محاضرة 17</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/c974cab8-4766-4f5d-9660-d006cde12f57')">محاضرة 18</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/5a0ee99d-b4f6-48c4-8ed8-79b905f4b2eb')">محاضرة 19</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/0d8228ab-a1b1-471a-9839-9ae8ffb2d093')">محاضرة 20</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/60affddd-7ebb-41fb-935a-364be8000477')">محاضرة 21</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/46526f81-5047-4019-b892-8cd7574432d9')">محاضرة 22</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/dd973422-9bd8-4e0f-880e-7d96682208e1')">محاضرة 23</div>
+    </div>
+  </div>
+
+  <!-- الفصل الرابع -->
+  <div class="chapter">
+    <div class="chapter-title" onclick="toggleLectures('chapter4')">
+      الفصل الرابع 📒
+    </div>
+    <div id="chapter4" class="lecture-list">
+      <div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/eb967892-d4a5-417a-bd6a-71d6a57c95b5')">محاضرة 1</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/3485fe57-0295-478c-b243-c8e2510c6530')">محاضرة 2</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/27ecf172-3224-4d20-82f6-01418f67186a')">محاضرة 3</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/55bae4de-41e7-49db-a645-0797683d4601')">محاضرة 4</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/c41ccd4a-093c-427e-b18e-37fed37ebcd9')">محاضرة 5</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/3219ae00-8a67-4736-9d87-3861b3a45ecd')">محاضرة 6</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/465ae32c-8c61-43c8-9d7f-5b0c18b4f7b4')">محاضرة 7</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/09d88f7c-d4e7-4aed-bdaf-8ea932a342f7')">محاضرة 8</div>
+    </div>
+  </div>
+  
+  
+      <div class="chapter">
+    <div class="chapter-title" onclick="toggleLectures('chapter5')">
+      الفصل الخامس 📒
+    </div>
+    <div id="chapter5" class="lecture-list">
+
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/ae6af2b2-73cf-44d9-8b4d-18b76cbc374d')">المحاضرة 1</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/56f9d796-01c9-4671-a7a9-9dda0d6ba300')">المحاضرة 2</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/e8a99319-7f62-48cd-b2bd-2caa9f7eae40')">المحاضرة 3</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/be5c4d40-829e-4d70-acd4-db0896ac106e')">المحاضرة 4</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/eee66d4e-cce0-4872-9bd5-25aeb594418b')">المحاضرة 5</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/48d0f065-4d4b-4896-86fa-3a1d3c3987e9')">المحاضرة 6</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/ae442ed5-bc65-4482-9186-511154a963db')">المحاضرة 7</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/0441c57e-18d5-4e6f-827c-4517a39ce29f')">المحاضرة 8</div>
+    </div>
+  </div>
+    
+
+  
+
+      <div class="chapter">
+    <div class="chapter-title" onclick="toggleLectures('chapter6')">
+      الفصل السادس
+    </div>
+    <div id="chapter6" class="lecture-list">
+
+
+
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/e356eb2b-daaa-4367-bde4-3c3ec1f60686')">المحاضرة 1</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/6473ebbe-51d7-4275-a5ec-454517f63d89')">المحاضرة 2</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/5273c791-2bf6-4cf6-a816-efd87c7dc438')">المحاضرة 3</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/68916b96-c084-4429-92a1-7f995a00d1a6')">المحاضرة 4</div>
+<div class="lecture" onclick="openVideo('https://iframe.mediadelivery.net/embed/215061/afc9e6fc-ab73-42d6-a058-097e3471375a')">المحاضرة 5</div>
+
+    </div>
+  </div>  
+
+
+ 
+   <!-- نافذة عرض الفيديو -->
+  <div id="video-container" class="video-container">
+    <iframe id="video-frame" src="" allowfullscreen></iframe>
+    <button class="close-btn" onclick="closeVideo()">إغلاق الفيديو</button>
+  </div>
+
+  <script>
+    function toggleLectures(chapterId) {
+      const chapter = document.getElementById(chapterId);
+      if (chapter.style.maxHeight) {
+        chapter.style.maxHeight = null;
+      } else {
+        chapter.style.maxHeight = chapter.scrollHeight + "px";
+      }
+    }
+
+    function openVideo(url) {
+      const videoContainer = document.getElementById("video-container");
+      const videoFrame = document.getElementById("video-frame");
+      videoFrame.src = url;
+      videoContainer.style.display = "block";
+      window.scrollTo({ top: videoContainer.offsetTop, behavior: "smooth" });
+    }
+
+    function closeVideo() {
+      const videoContainer = document.getElementById("video-container");
+      const videoFrame = document.getElementById("video-frame");
+      videoFrame.src = "";
+      videoContainer.style.display = "none";
+    }
+  </script>
+</body>
+</html>
