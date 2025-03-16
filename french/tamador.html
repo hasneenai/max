@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماضر مؤيد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+  }
+
+  body {
+      direction: rtl;
+      background: linear-gradient(to right, #1e1e2f, #2c2c3c);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #ffd700;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 800px;
+  }
+
+  .chapter {
+      width: 100%;
+      background: transparent;
+      border-radius: 15px;
+      box-shadow: none;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      margin-bottom: 20px;
+  }
+
+  .chapter:hover {
+      transform: translateY(-8px);
+  }
+
+  .chapter-title {
+      background-color: #aaa;
+      border: 2px solid #ffd700;
+      color: white;
+      padding: 12px 40px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 20px 20px 40px 40px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      margin: 12px 10px;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+  }
+
+  /* منع تغير اللون عند الضغط أو التحديد */
+  .chapter-title:active,
+  .chapter-title:focus {
+      background-color: #aaa; /* نفس اللون الأساسي */
+      outline: none;
+  }
+
+  .lecture-list {
+      display: none;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center; /* توسيط الأزرار أفقياً */
+      align-items: center;     /* توسيط عمودي إن لزم */
+      gap: 20px;
+      padding: 20px;
+      background: transparent;
+      border-radius: 0 0 15px 15px;
+  }
+
+  .lecture {
+        background-color: #aaa;
+        border: 2px solid #ffd700;
+        color: #000;
+        padding: 10px 18px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        margin: 10px 8px;
+        width: 200px; /* عرض ثابت */
+        text-align: center; /* توسيط النص داخل الزر */
+    }
+
+  .lecture:hover {
+        background: #d4efff;
+    }
+
+  .video-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+  }
+
+  .video-content {
+      width: 90%;
+      max-width: 850px;
+      background: #ffffff;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+  }
+
+  .video-content iframe {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 9;
+  }
+
+  .close-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #ff6b81;
+      color: white;
+      border: none;
+      padding: 8px 8px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      z-index: 2000;
+  }
+
+  .close-btn:hover {
+      background: #e84118;
+  }
+
+  @media (max-width: 768px) {
+      h1 {
+          font-size: 2rem;
+      }
+
+      .chapter-title {
+          font-size: 1.4rem;
+      }
+
+      .lecture {
+          font-size: 1rem;
+      }
+
+      .video-content {
+          width: 95%;
+      }
+  }
+
+  footer {
+      margin-top: auto;
+      padding: 15px;
+      color: #ccc;
+      text-align: center;
+      width: 100%;
+      font-size: 1rem;
+      border-top: 1px solid #555;
+  }
+</style>
+</head>
+<body>
+<div id="videoModal" class="video-modal" onclick="closeVideo()">
+    <div class="video-content" onclick="event.stopPropagation()">
+        <button class="close-btn" onclick="closeVideo()">×</button>
+        <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+    <h1>محاضرات تماضر مؤيد</h1>
+
+  <div class="chapter">
+    <div class="chapter-title" onclick="toggleLectures('chapter1')">
+      اضغط هنا لعرضهن
+    </div>
+    <div id="chapter1" class="lecture-list">
+     <div class="lecture"
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/f8d9c834-d3e2-40a9-b65f-5823c531888e/playlist.m3u8')">اساسيات في اللغة الفرنسية</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/4471e98a-dc11-4102-b4fd-d51857b601c2/playlist.m3u8')">المضارع</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/907e1a43-42ff-430b-8c11-df13e8dafda2/playlist.m3u8')">الماضي المستمر</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/330c495a-8c7e-4c31-8250-c7ebffc01949/playlist.m3u8')">صيغة النصب</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/d503f2df-7ac2-458a-a006-55e3b137ff8d/playlist.m3u8')">الحوارات</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/68583210-c56d-4630-93d3-2a8bd44cbf48/playlist.m3u8')">الماضي المركب</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/c51e9441-d6c4-4f34-9d5f-62d00bd0271e/playlist.m3u8')">الماضي التام</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/56b4da99-ca3b-451e-adee-31d7a9435c37/playlist.m3u8')">المستقبل البسيط</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/1a158502-f455-4bbe-8c15-a71753d5556c/playlist.m3u8')">المستقبل الاسبق</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/2ba9c4c2-414b-43f4-8a4a-1b7335971c0b/playlist.m3u8')">صيغة الشرط (الحاضر والماضي)</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/bd882d85-3d03-4530-a051-51cb08ec1a8e/playlist.m3u8')">الامر والحال</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/0178ed49-16d0-4d72-b0c0-ce7e899adeb7/playlist.m3u8')">حوار احلام المجد</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/e6a94c6a-d299-4c85-9069-90419425c21c/playlist.m3u8')">التعويض (المفعول به المباشر والغير مباشر)</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/e6a94c6a-d299-4c85-9069-90419425c21c/playlist.m3u8')">التعويض (y,en)</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/72958839-e569-4372-961f-1214341bac77/playlist.m3u8')">التعويض الموقعي</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/11d279b3-8d90-4141-95e2-8b3dedb12ab5/playlist.m3u8')">(تعويض الجمل المركبة)que</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/a996ad51-2bf0-4df8-b588-68df0e4fbe9b/playlist.m3u8')">حروف الجر(الجزء الاول)</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/c8369e76-9359-48cb-aeb0-a582bba17d5d/playlist.m3u8')">حروف الجر (الجزء الثاني)</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/67b097c3-42fb-49e8-88e7-3af56e0172f5/playlist.m3u8')">النفي</div>
+<div class="lecture" onclick="openVideo('https://vz-99e5c202-ca5.b-cdn.net/d1d5e415-c667-446d-99b5-d9c8de3b0066/playlist.m3u8')">ضمائر الوصل</div>
+  </div>
+    </div>
+
+    <script>
+        function toggleLectures(chapterId) {
+            const chapter = document.getElementById(chapterId);
+            if (chapter.style.maxHeight) {
+                chapter.style.maxHeight = null;
+            } else {
+                chapter.style.maxHeight = chapter.scrollHeight + "px";
+            }
+        }
+
+        function openVideo(url) {
+            const videoContainer = document.getElementById("video-container");
+            const videoFrame = document.getElementById("video-frame");
+
+            videoFrame.src = url;
+            videoContainer.style.display = "block";
+            window.scrollTo({ top: videoContainer.offsetTop, behavior: "smooth" });
+        }
+
+        function closeVideo() {
+            const videoContainer = document.getElementById("video-container");
+            const videoFrame = document.getElementById("video-frame");
+
+            videoFrame.src = "";
+            videoContainer.style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
+    <footer>
+        <p>&copy; 2025 جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+  function toggleLectures(chapterId) {
+      var chapter = document.getElementById(chapterId);
+      if (chapter.style.display === "none" || chapter.style.display === "") {
+          chapter.style.display = "flex";
+      } else {
+          chapter.style.display = "none";
+      }
+  }
+
+  function openVideo(videoUrl) {
+      var modal = document.getElementById("videoModal");
+      var videoFrame = document.getElementById("videoFrame");
+      videoFrame.src = videoUrl;
+      modal.style.display = "flex";
+  }
+
+  function openVideo(videoUrl) {
+    var modal = document.getElementById("videoModal");
+    var videoFrame = document.getElementById("videoFrame");
+    videoFrame.src = videoUrl;
+    modal.style.display = "flex";  // يظهر المودال
+}
+
+function closeVideo() {
+    var modal = document.getElementById("videoModal");
+    var videoFrame = document.getElementById("videoFrame");
+    videoFrame.src = "";  // إيقاف الفيديو
+    modal.style.display = "none";  // إخفاء المودال
+}
+</script>
+</body>
+</html>
