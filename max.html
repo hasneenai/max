@@ -12,35 +12,40 @@
       color: #fff;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      height: 100%;
+      min-height: 100vh;
+      background-color: #0d0d0d;
       transition: background-color 0.3s, color 0.3s;
+      align-items: center;
     }
 
-    /* الوضع الليلي */
     .dark-mode {
       background-color: #0d0d0d;
       color: #fff;
     }
 
-    /* الوضع النهاري */
     .light-mode {
       background-color: #f5f5f5;
       color: #000;
     }
 
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
     h1 {
-      margin-top: 20px;
+      margin-top: 40px;
       font-size: 32px;
       color: #ffcc00;
       text-shadow: 0 4px 15px rgba(255, 204, 0, 0.6);
-      white-space: nowrap;
       text-align: center;
     }
 
     .buttons-container {
-      margin-top: 40px;
+      margin-top: 30px;
       width: 90%;
       max-width: 600px;
       display: flex;
@@ -71,43 +76,68 @@
       box-shadow: 0 6px 15px rgba(255, 204, 0, 0.4);
     }
 
+    .extra-links {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .extra-links a {
+      display: block;
+      color: #ffcc00;
+      text-decoration: none;
+      margin: 8px 0;
+      transition: color 0.3s ease;
+    }
+
+    .extra-links a:hover {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+
     .footer {
-      margin-top: 80px;
       padding: 20px;
       color: #999;
       font-size: 15px;
       border-top: 1px solid #333;
       width: 100%;
       text-align: center;
+      background-color: inherit;
     }
 
     .sun-icon {
-      font-size: 30px;
-      cursor: pointer;
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1000;
-      margin-left: 20px;
-    }
+  font-size: 35px;
+  cursor: pointer;
+  position: fixed;
+  top: 40px;    /* بدل 15px */
+  left: 40px;   /* بدل 15px */
+  z-index: 1000;
+}
   </style>
 </head>
 <body class="dark-mode">
 
   <span class="sun-icon" id="sunIcon" onclick="toggleTheme()">☀</span>
-  
-  <h1>منصة ماكس التعليمية</h1>
 
-  <div class="buttons-container">
-    <a href="Islamic" class="lecture-button" target="_blank">التربية الإسلامية</a>
-    <a href="arab" class="lecture-button" target="_blank">اللغة العربية</a>
-    <a href="english" class="lecture-button" target="_blank">اللغة الإنجليزية</a>
-    <a href="alive" class="lecture-button" target="_blank">الأحياء</a>
-    <a href="mathematics" class="lecture-button" target="_blank">الرياضيات</a>
-    <a href="chemistry/chemi" class="lecture-button" target="_blank">الكيمياء</a>
-    <a href="physics/physic" class="lecture-button" target="_blank">الفيزياء</a>
-    <a href="french/franch" class="lecture-button" target="_blank">الفرنسي</a>
-    <a href="https://t.me/malazm_max2025" class="lecture-button" target="_blank">قناة الملازم</a>
+  <div class="main-content">
+    <h1>منصة ماكس التعليمية</h1>
+
+    <div class="buttons-container">
+      <a href="Islamic" class="lecture-button" target="_blank">التربية الإسلامية</a>
+      <a href="arab" class="lecture-button" target="_blank">اللغة العربية</a>
+      <a href="english" class="lecture-button" target="_blank">اللغة الإنجليزية</a>
+      <a href="alive" class="lecture-button" target="_blank">الأحياء</a>
+      <a href="mathematics" class="lecture-button" target="_blank">الرياضيات</a>
+      <a href="chemistry/chemi" class="lecture-button" target="_blank">الكيمياء</a>
+      <a href="physics/physic" class="lecture-button" target="_blank">الفيزياء</a>
+      <a href="french/franch" class="lecture-button" target="_blank">الفرنسي</a>
+      <a href="https://t.me/malazm_max2025" class="lecture-button" target="_blank">قناة الملازم</a>
+    </div>
+
+    <div class="extra-links">
+      <a href="https://youtube.com/@mmuu20?si=nLst7glcq_K1-B3r" target="_blank">قناتي على اليوتيوب</a>
+      <a href="https://www.instagram.com/m.4a9/profilecard/?igsh=cnFseGVyM3lkZ25y" target="_blank">حسابي على إنستغرام</a>
+    </div>
   </div>
 
   <div class="footer">
@@ -119,15 +149,14 @@
       const body = document.body;
       const sunIcon = document.getElementById("sunIcon");
 
-      // Toggle dark and light mode
       if (body.classList.contains("dark-mode")) {
         body.classList.remove("dark-mode");
         body.classList.add("light-mode");
-        sunIcon.textContent = "🌙"; // Change icon to moon
+        sunIcon.textContent = "🌙";
       } else {
         body.classList.remove("light-mode");
         body.classList.add("dark-mode");
-        sunIcon.textContent = "☀"; // Change icon to sun
+        sunIcon.textContent = "☀";
       }
     }
   </script>
